@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="MCO UHC:jar">
+    <output-path>$PROJECT_DIR$/../../../../Serveurs/data/gamemodes</output-path>
+    <root id="archive" name="MCO UHC.jar">
+      <element id="module-output" name="MCO UHC" />
+    </root>
+  </artifact>
+</component>

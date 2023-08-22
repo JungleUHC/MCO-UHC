@@ -1,0 +1,40 @@
+debug-mode: false
+pvp-enabling-delay: 5
+roles-default-amount:
+  coalition-esteban: 1
+  coalition-zia: 1
+  coalition-tao: 1
+  coalition-mendoza: 1
+  coalition-pedro: 1
+  coalition-sancho: 1
+  coalition-waina: 1
+  coalition-ketcha: 1
+  coalition-karka: 1
+  coalition-viracocha: 1
+  coalition-olmeque_soldier: 2
+  coalition-maya_soldier: 2
+  coalition-seiban_warrior: 2
+  coalition-urubus_warrior: 2
+  hourglass-ambrosius: 1
+  hourglass-athanaos: 1
+  hourglass-fernando: 1
+  hourglass-marinche: 1
+  hourglass-teteola: 1
+  hourglass-gomez: 1
+  hourglass-helvetius: 1
+  hourglass-hortense: 1
+  hourglass-nostradamus: 1
+  hourglass-gaspard: 1
+  hourglass-pizarro: 1
+  hourglass-isabella: 1
+  hourglass-cinesus: 1
+  hourglass-hippolyte: 1
+  independant-yupanqui: 1
+  independant-calmeque: 1
+  independant-menator: 1
+  independant-takashi: 1
+  
+hyppolyte-items-list:
+  - REDSTONE
+  - DIAMOND
+  - GOLD

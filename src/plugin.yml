@@ -1,0 +1,28 @@
+name: "MCO_UHC"
+author: ["Ariel (designer)","Altaks (dev)"]
+version: 1.0.0
+main: fr.altaks.mco.uhc.Main
+api: Spigot
+api-version: 1.8
+dependencies: WorldEdit
+commands:
+  checkitems:
+    description: "Permet aux administrateurs de se donner des items du plugin"
+    permission: "mco.debug"
+  test:
+    description: "Affiche la configuration des roles"
+    permission: "mco.debug"
+  gamestatus:
+    description: "Affiche le statut de la partie"
+    permission: "mco.debug"
+  start:
+    description: "Lance la partie"
+    permission: "mco.debug"
+  displayroles:
+    description: "Displays roles"
+    permission: "mcoapi.roles.display"
+  mco:
+    description: "Permet d'utiliser les commandes relatives au mode de jeu"
+  displayteams:
+    description: "Displays teams"
+    permission: "mcoapi.teams.display"
