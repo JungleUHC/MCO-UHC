@@ -74,30 +74,6 @@ public class Nostradamus implements Role {
 				}
 			}
 		}
-
-		String deathMessage = "§7§m-----------------------------------------\n§c"
-							+ event.getEntity().getDisplayName() + "§7 est mort(e)\n";
-
-		// en fonction de la team du joueur adverse, on change la couleur du rôle
-		deathMessage += "Son rôle était : ";
-		switch(main.getCurrentGameManager().roleOfPlayer().get(event.getEntity().getUniqueId()).getRoleTeam()) {
-			case COALITION:
-				deathMessage += "§a";
-				break;
-			case HOURGLASS:
-				deathMessage += "§c";
-				break;
-			case INDEPENDANT:
-				deathMessage += "§6";
-				break;
-			default:
-				return;
-		}
-
-		deathMessage += main.getCurrentGameManager().roleOfPlayer().get(event.getEntity().getUniqueId()).getRoleName();
-		deathMessage += "\n§7§m-----------------------------------------";
-		
-		event.setDeathMessage(deathMessage);
 	}
 
 	public long getLastDeathPredictionUsage() {
