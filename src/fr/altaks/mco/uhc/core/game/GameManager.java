@@ -306,7 +306,7 @@ public class GameManager implements Listener {
 		
 		RolesUtil util = new RolesUtil(this);
 		
-		// explications des roles aux joueurs
+		// affectation des roles aux joueurs
 		for(Entry<Role, ArrayList<UUID>> affectedRole : attributedRoles.entrySet()) {
 			for(UUID id : affectedRole.getValue()) {
 				

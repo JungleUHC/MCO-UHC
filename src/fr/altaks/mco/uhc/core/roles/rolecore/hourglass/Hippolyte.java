@@ -96,7 +96,7 @@ public class Hippolyte implements Role {
 		}
 
 
-		for(Object materialName : this.main.getConfig().getList("hyppolyte-items-list")) {
+		for(Object materialName : this.main.getConfig().getList("hippolyte-items-list")) {
 			this.loadedMaterialList.add(Material.matchMaterial((String)materialName));
 		}
 	}
@@ -106,12 +106,17 @@ public class Hippolyte implements Role {
 		if(main.getCurrentGameManager().getCurrentGameState() != GameState.PLAYING) return;
 		if(event.getBlockPlaced() == null) return;
 		if(ItemManager.lightCompare(event.getItemInHand(), Artifacts.RoleItems.CHAUDRON_HIPPOLYTE)) {
+			Main.logIfDebug("Hippolyte : Chaudron placé");
+
 			ArrayList<Material> materialsToCollect = new ArrayList<Material>();
 
 			while(materialsToCollect.size() < 3) {
 				int nb = new Random().nextInt(this.loadedMaterialList.size());
 				if(!materialsToCollect.contains(this.loadedMaterialList.get(nb))) materialsToCollect.add(this.loadedMaterialList.get(nb));
 			}
+
+			Main.logIfDebug("Hippolyte : Matériaux à collecter : ");
+			for(Material m : materialsToCollect) Main.logIfDebug("Hippolyte : " + m.name().toLowerCase().replace("_", " "));
 
 			StringJoiner joiner = new StringJoiner(", ");
 
@@ -125,6 +130,7 @@ public class Hippolyte implements Role {
 				@Override
 				public void run() {
 					if(cauldronLoc.getBlock().getType() != Material.CAULDRON) {
+						Main.logIfDebug("Hippolyte : Chaudron cassé/bloc différent");
 						event.getPlayer().getInventory().addItem(Artifacts.RoleItems.CHAUDRON_HIPPOLYTE);
 						cancel();
 					} else {
@@ -137,6 +143,9 @@ public class Hippolyte implements Role {
 							if(entity instanceof Item && materialsToCollectCopy.contains(((Item)entity).getItemStack().getType())) {
 								materialsToCollectCopy.remove(((Item)entity).getItemStack().getType());
 								entitiesToRemove.add(entity);
+								Main.logIfDebug("Hippolyte : Item trouvé : " + ((Item)entity).getItemStack().getType().name().toLowerCase().replace("_", " "));
+							} else {
+								Main.logIfDebug("Hippolyte : Item non trouvé : " + entity.getClass().getName());
 							}
 						}
 						if(materialsToCollectCopy.size() == 0) {
@@ -145,6 +154,9 @@ public class Hippolyte implements Role {
 							remainingAlchimieSacreeHitProtection.put(event.getPlayer().getUniqueId(), 10);
 							for(Entity entity : entitiesToRemove) entity.remove();
 							cancel();
+						} else {
+							Main.logIfDebug("Hippolyte : Items manquants : ");
+							for(Material m : materialsToCollectCopy) Main.logIfDebug("Hippolyte : " + m.name().toLowerCase().replace("_", " "));
 						}
 					}
 				}

@@ -84,7 +84,7 @@ public class Tao implements Role {
 				for(UUID uuid : main.getCurrentGameManager().getPlayersThatOwnsRole(RoleType.TAO)) {
 					Player tao = Bukkit.getPlayer(uuid);
 					if(tao != null) {
-						tao.sendMessage(Main.PREFIX + "§bTao \u00BB §c" + event.getPlayer().getDisplayName() + " vient de manger une pomme dorée");
+						tao.sendMessage(Main.PREFIX + "§bTao §7\u00BB §c" + event.getPlayer().getDisplayName() + " vient de manger une pomme dorée");
 					}
 				}
 			}

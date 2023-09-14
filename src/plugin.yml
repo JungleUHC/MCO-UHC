@@ -1,6 +1,6 @@
 name: "MCO_UHC"
 author: ["Ariel (designer)","Altaks (dev)"]
-version: 1.0.0
+version: beta-1.0.1
 main: fr.altaks.mco.uhc.Main
 api: Spigot
 api-version: 1.8

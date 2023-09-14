@@ -173,6 +173,7 @@ public class MCOCommand implements CommandExecutor {
 					if(targeted != null) {
 						Tao taoRole = ((Tao)main.getCurrentGameManager().getRoleFromRoleType().get(RoleType.TAO));
 						taoRole.setNewPichuTarget(targeted.getUniqueId());
+						player.sendMessage(Main.PREFIX + "§cVous venez de placer votre pichu sur " + targeted.getName() + " !");
 						return true;
 					} else {
 						player.sendMessage(Main.PREFIX + "§cVeuillez indiquer un pseudonyme valide !");
@@ -930,7 +931,9 @@ public class MCOCommand implements CommandExecutor {
 								
 								takashiRole.getCanTakeDamageFrom().put(player.getUniqueId(), target.getUniqueId());
 								takashiRole.getCanTakeDamageFrom().put(target.getUniqueId(), player.getUniqueId());
-								
+
+								sender.sendMessage(Main.PREFIX + "§cVous venez de défier " + target.getDisplayName() + " en duel !");
+
 								new BukkitRunnable() {
 									
 									@Override

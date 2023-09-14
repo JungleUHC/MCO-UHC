@@ -34,7 +34,9 @@ roles-default-amount:
   independant-menator: 1
   independant-takashi: 1
   
-hyppolyte-items-list:
+hippolyte-items-list:
   - REDSTONE
   - DIAMOND
-  - GOLD
+  - GOLD_INGOT
+  - IRON_INGOT
+  - EMERALD
