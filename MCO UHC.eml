@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<component jdk="1.8 u161 (Minecraft 1.8 -&gt; 1.15.2)" jdk_type="JavaSDK">
-	<contentEntry url="file://$MODULE_DIR$"/>
-	<levels>
-		<level name="spigot-1.8.8" value="project"/>
-		<level name="worldedit-bukkit-6.1" value="project"/>
-		<level name="MCOAPI" value="project"/>
-	</levels>
-</component>
