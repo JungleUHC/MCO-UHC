@@ -1258,4 +1258,26 @@ public class GameManager implements Listener {
 		
 	}
 
+	@EventHandler
+	public void onPlayerDealsDamage(EntityDamageByEntityEvent event){
+		if(this.currentGameState == GameState.WAITING) return;
+		if(event.getDamager() instanceof Player){
+			if(((Player) event.getDamager()).hasPotionEffect(PotionEffectType.INCREASE_DAMAGE)){
+
+				// +130% par niveau
+				double baseDamage = event.getDamage();
+				int potLvl = 1;
+				for(PotionEffect effect : ((Player) event.getDamager()).getActivePotionEffects()){
+					if(effect.getType().equals(PotionEffectType.INCREASE_DAMAGE)){
+						potLvl = effect.getAmplifier() + 1;
+						break;
+					}
+				}
+				double reducerCoeff = (potLvl * 1.3) + 1;
+				double finalDamage = (baseDamage / reducerCoeff) * (potLvl * 1.15);
+				event.setDamage(finalDamage);
+			}
+		}
+	}
+
 }
